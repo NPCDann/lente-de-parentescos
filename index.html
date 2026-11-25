@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <meta name="theme-color" content="#14181A">
 <title>Lente de parentescos</title>
 <meta name="description" content="Herramienta de realidad aumentada para enlazar los objetos de un espacio de trabajo con las agencias más-que-humanas que los hacen posibles.">
@@ -30,6 +30,10 @@
       <button class="chip" data-practica="otra">Otra</button>
     </div>
     <input id="practica-otra" class="entrada" type="text" placeholder="¿Cuál?" hidden maxlength="60">
+
+    <p class="campo">Reconocimiento</p>
+    <div class="chips"><button id="ampliado" class="chip" aria-pressed="false">Reconocimiento ampliado: suelo, cielo, sol, hongos, insectos…</button></div>
+    <p class="nota">Funciona en el modo cámara. Descarga unos 150 MB la primera vez; mejor con wifi. Sin activarlo, igual puedes tocar cualquier cosa y elegir qué es.</p>
 
     <p id="modo-aviso" class="aviso">Revisando qué puede hacer este teléfono…</p>
     <button id="entrar" class="boton principal" disabled>Entrar</button>
@@ -78,7 +82,8 @@
   <div class="marco">
     <h2>Cómo funciona</h2>
     <p><b>En teléfonos Android con Chrome</b> la herramienta usa WebXR, el estándar de realidad aumentada de la web. El teléfono reconoce superficies y puntos del entorno con ARCore y calcula su propia posición mientras te mueves. Cada nudo que marcas queda fijo en el lugar real donde lo pusiste: puedes caminar alrededor y los nudos y los hilos siguen ahí.</p>
-    <p><b>En otros teléfonos</b> (por ejemplo, iPhone) la herramienta usa la cámara en vivo y un modelo de reconocimiento de objetos (COCO-SSD) que funciona dentro del navegador. Los nudos siguen al objeto mientras aparece en cuadro, pero no quedan anclados en el espacio.</p>
+    <p><b>En otros teléfonos</b> (por ejemplo, iPhone) la herramienta usa la cámara en vivo y un modelo de reconocimiento de objetos (COCO-SSD) que funciona dentro del navegador. Los nudos siguen al objeto mientras aparece en cuadro y, si sale de cuadro, se sostienen con el giro del teléfono, pero no quedan anclados en el espacio.</p>
+    <p><b>El reconocimiento ampliado</b> usa CLIP, un modelo que compara la imagen con palabras. Así puede sugerir cosas que COCO-SSD no conoce: suelo de concreto o de tierra, nubes, sol, hongos, musgo, insectos. También funciona dentro del teléfono, después de descargarse una vez.</p>
     <p>Las imágenes de la cámara no salen del teléfono. Nada se envía a un servidor. El registro solo existe si lo descargas o lo copias al final.</p>
     <p class="nota">Lente de parentescos · Dannery Elizondo Donoso · Maestría en Diseño Industrial, UNAM.</p>
     <button class="boton" data-cerrar="info">Cerrar</button>
